@@ -58,7 +58,6 @@ This project includes a **mock environment generator** to simulate camera and Li
 
 ### 🧩 Depth Image:
 - Default value: `2.0 m` for entire frame
-- Optional: obstacle region (e.g., red box) can have a closer value (`1.0 m`)
 - Published on `/camera_depth_image_raw` (format: `32FC1`)
 
 ### 🧩 LiDAR:
@@ -75,15 +74,13 @@ This project includes a **mock environment generator** to simulate camera and Li
    - Python environment setup
    - ROS2 (e.g. Humble or Foxy) installation
    - `cv_bridge`, `torch`, `rclpy`, `sensor_msgs` dependencies, `setup.py`, `package.xml`, `launch files` and etc.  
-2. **Model details**:
-   - TorchHub download might fail on first run—consider packaging weights or freezing the model.
-3. **Camera and LiDAR calibration**:
+2. **Camera and LiDAR calibration**:
    - Currently assumes perfect alignment; real-world deployment requires extrinsics calibration.
-4. **Time synchronization**:
+3. **Time synchronization**:
    - RGB, depth, and LiDAR messages should be synced.
-5. **Error handling & logging**:
+4. **Error handling & logging**:
    - Logging should replace `print()` or `pass`, and GPU errors should be caught.
-6. **Performance monitoring**:
+5. **Performance monitoring**:
    - FPS tracking and ROS diagnostics could help in validation.
 
 ---
